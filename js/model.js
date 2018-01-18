@@ -39,18 +39,18 @@ var List_tasks = function () {
         _classCallCheck(this, List_tasks);
 
         this.name = name;
-        this.list_task = new Array();
+        this.array_task = new Array();
     }
 
     _createClass(List_tasks, [{
         key: "addTask",
         value: function addTask(newTask) {
-            this.list_task.push(newTask);
+            this.array_task.push(newTask);
         }
     }, {
         key: "removeTask",
         value: function removeTask(indice) {
-            this.list_task.splice(indice, 1);
+            this.array_task.splice(indice, 1);
         }
     }, {
         key: "editNameList",

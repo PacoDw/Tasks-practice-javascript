@@ -25,17 +25,17 @@ class List_tasks {
     constructor(name = "Name of the list")
     {
         this.name = name;
-        this.list_task = new Array();
+        this.array_task = new Array();
     }
 
     addTask(newTask)
     {
-        this.list_task.push(newTask);
+        this.array_task.push(newTask);
     }
 
     removeTask(indice)
     {
-        this.list_task.splice(indice, 1);
+        this.array_task.splice(indice, 1);
     }
 
     editNameList(name)

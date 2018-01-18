@@ -22,7 +22,11 @@ function setTask(newTask) {
     var p_description = document.createElement('p');
     p_description.textContent = newTask.description;
 
+    var input_check = document.createElement('input');
+    input_check.type = 'checkbox';
+
     li_task.appendChild(h3_name);
+    li_task.appendChild(input_check);
     li_task.appendChild(p_description);
 
     li_task.classList.add('li-task');
