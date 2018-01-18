@@ -24,7 +24,7 @@ function edditToTask(e) {
     //Validar si es un checkbox
     if (e.target.type === 'checkbox') {
         saveToArrayList(e);
-        console.table(list.array_task);
+        // console.table(list.array_task);
     } else if (e.target.tagName !== 'LI') //Si no entonces hara la edicion del texto
         {
             e.target.setAttribute('contenteditable', 'true');
