@@ -1,16 +1,17 @@
 var input_task  = document.getElementById("input-new-task");
-var ul_list     = document.getElementById('ul-list');    
+var ul_list     = document.getElementById('ul-list');
 var list = new List_tasks();
 
+//Empiezan las funciones
 function addToList(e)
 {
     e.preventDefault();
     if(e.keyCode === 13)
     {
         let newTask = new Task(input_task.value);
-        
+
         setTitleList(list.name);
-        
+
         list.addTask(newTask);
         setTask(newTask);
 
@@ -42,14 +43,14 @@ function edditToTask(e)
                 e.target.blur();
             }
         });
-    
+
         //Cuando sale del foco guardara los cambios
         e.target.addEventListener('blur', function a() {
             e.target.removeEventListener('blur', a);
             e.target.setAttribute('contenteditable', 'false');
-            
+
             saveToArrayList(e);
-            
+
             ul_list.addEventListener('click', edditToTask);
         });
     }
@@ -58,7 +59,7 @@ function edditToTask(e)
 function saveToArrayList(e)
 {
     //Valida si es igual al titulo que no esta encerrado en un li
-    if(ul_list.children[0] === e.path[0]) 
+    if(ul_list.children[0] === e.path[0])
     {
         list.editNameList(ul_list.children[0].textContent) //se cambia el titulo dentro de la data
     }
@@ -70,11 +71,11 @@ function saveToArrayList(e)
             {
                 //es i-1 porque el index 0 de list es un 'li' a diferencia del 'ul' que es el titulo h2
                 list.array_task[i-1].name = ul_list.children[i].children[0].textContent;
-                (ul_list.children[i].children[1].checked) ? list.array_task[i-1].isCompleted = true : list.array_task[i-1].isCompleted = false; 
+                (ul_list.children[i].children[1].checked) ? list.array_task[i-1].isCompleted = true : list.array_task[i-1].isCompleted = false;
                 list.array_task[i-1].description = ul_list.children[i].children[2].textContent;
                 // console.table(list.array_task);
             }
-        }            
+        }
     }
 }
 
