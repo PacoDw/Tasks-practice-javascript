@@ -8,6 +8,8 @@ function addToList(e)
     e.preventDefault();
     if(e.keyCode === 13)
     {
+      if(input_task !== '')
+      {
         let newTask = new Task(input_task.value);
 
         setTitleList(list.name);
@@ -16,6 +18,11 @@ function addToList(e)
         setTask(newTask);
 
         input_task.value = '';
+      }
+      else {
+        //Error no puedes crear una tarea vacia
+      }
+
     }
 }
 

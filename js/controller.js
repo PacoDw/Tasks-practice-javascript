@@ -4,17 +4,22 @@ var input_task = document.getElementById("input-new-task");
 var ul_list = document.getElementById('ul-list');
 var list = new List_tasks();
 
+//Empiezan las funciones
 function addToList(e) {
     e.preventDefault();
     if (e.keyCode === 13) {
-        var newTask = new Task(input_task.value);
+        if (input_task !== '') {
+            var newTask = new Task(input_task.value);
 
-        setTitleList(list.name);
+            setTitleList(list.name);
 
-        list.addTask(newTask);
-        setTask(newTask);
+            list.addTask(newTask);
+            setTask(newTask);
 
-        input_task.value = '';
+            input_task.value = '';
+        } else {
+            //Error no puedes crear una tarea vacia
+        }
     }
 }
 
