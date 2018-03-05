@@ -1,2 +1,2 @@
 # Ignore all modules node
-/node_modules
+node_modules/
