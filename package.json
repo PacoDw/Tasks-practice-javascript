@@ -4,10 +4,11 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "nodemon app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Paco Preciado Mendoza <__pm@outlook.com",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
@@ -16,6 +17,7 @@
     "gulp": "^4.0.0",
     "gulp-babel": "^7.0.1",
     "gulp-concat": "^2.6.1",
-    "gulp-install": "^1.1.0"
+    "gulp-install": "^1.1.0",
+    "nodemon": "^1.17.3"
   }
 }
